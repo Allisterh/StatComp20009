@@ -1,0 +1,53 @@
+---
+title: "Introduction to factornumber"
+author: "Fanglin Bao"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to factornumber}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+## Overview
+
+__factornumber__ contains two functions : _getnfac_ and _nof_ . Both of them are used to eatimate the number of factors in high-dimensional time
+series based on a dimension-reduction viewpoint. But in details, _getnfac_ uses the methods and criteria found in Bai and Ng (2002); _nof_ uses the the methods and criteria found in Lam and Yao(2012).
+
+## getnfac and nof
+
+We use an amount of stock returns in each trade minute in a day."dt.d" is a 240*229 matrix containing the stock price in each minute of the day.
+
+First, using the complete data set to eatimate the number of factors.
+```{r}
+library(StatComp20009)
+data(dt.d)
+rt.log<-log(dt.d[2:dim(dt.d)[1],]/dt.d[1:(dim(dt.d)[1]-1),])
+r.B1.day<-getnfac(rt.log,20,'PC1')$ic
+r.B2.day<-getnfac(rt.log,20,'PC2')$ic
+r.B3.day<-getnfac(rt.log,20,'PC3')$ic
+r.Y.day<-nof(rt.log,3)
+knitr::kable(cbind(r.B1.day,r.B2.day,r.B3.day,r.Y.day))
+```
+
+Then, to run the function not only once, divede the data into different parts with length of 30. Thus we get 8 data sets(30*229).
+
+For each data set, we want to get a small number of common factors, which is much less the initial value 229, to explain the data well.
+```{r}
+L<-30
+k<-8
+r.B1<-r.B2<-r.B3<-r.Y<-numeric(k)
+for (i in 1:k) {
+  L<-30
+  rt.log<-log(dt.d[(2:L)+L*(i-1),]/dt.d[(1:(L-1))+L*(i-1),])
+  L<-L-1
+  r.B1[i]<-getnfac(rt.log,20,'PC1')$ic
+  r.B2[i]<-getnfac(rt.log,20,'PC2')$ic
+  r.B3[i]<-getnfac(rt.log,20,'PC3')$ic
+  r.Y[i]<-nof(rt.log,3)
+}
+knitr::kable(cbind(r.B1,r.B2,r.B3,r.Y))
+```
+
+From the table above,we can see that the number of factors using Bai's PC1, PC2, PC3 criteria and Yao's method are all the same: 1 common factor.
+

@@ -1,0 +1,17 @@
+Package: StatComp20009
+Type: Package
+Title: Functions for 'Statistical Computing' course
+Version: 1.0
+Date: 2020-12-09
+Author: Fanglin Bao
+Maintainer: Fanglin Bao <bflin@mail.ustc.edu.cn>
+Description: This package contains my homework answers and 2 functions which can be used in my research.
+License: GPL (>= 2)
+Imports: Rcpp, microbenchmark, knitr, rmarkdown, xtable, MASS, bootstrap, boot, DAAG, RANN, energy, Ball, ggplot2
+LinkingTo: Rcpp
+RoxygenNote: 7.1.1
+Encoding: UTF-8
+VignetteBuilder: knitr
+Depends: R(>= 3.5.0)
+URL: http://github.com/allin00/StatComp20009
+BugReports: http://github.com/allin00/StatComp20009/issues

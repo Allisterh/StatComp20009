@@ -1,0 +1,17 @@
+[
+    {
+        "file": "D:/2020fall/package/StatComp20009/src/randomwalk.cpp",
+        "file_last_write": 1607952523.0,
+        "definitions": [
+            {
+                "usr": "c:@F@rwRcpp#d#d#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "rwRcpp(double, double, int)",
+                "file": "D:/2020fall/package/StatComp20009/src/randomwalk.cpp",
+                "line": 19,
+                "column": 6
+            }
+        ]
+    }
+]
