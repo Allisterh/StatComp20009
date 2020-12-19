@@ -23,6 +23,14 @@
 #'
 #' @return Fhat A matrix of the estimated common components
 #'
+#' @examples
+#' \dontrun{
+#' data(dt.d)
+#' rt.log<-log(dt.d[2:dim(dt.d)[1],]/dt.d[1:(dim(dt.d)[1]-1),])
+#' r<-getnfac(rt.log,20,'PC1')
+#' r$ic
+#' }
+#'
 #'
 #' @references Jushan Bai and Serena Ng. 'Determining the Number of Factors in
 #' Approximate Factor Models.' Econometrica 70.1 (2002): 191-221. Print.
@@ -61,7 +69,7 @@ getnfac <- function(x, kmax = NULL, criteria = NULL) {
   
   
   if(is.null(criteria)){
-    warning("Criteria is NULL, setting to BIC3")
+    warning("Criteria is NULL, setting to PC3")
     criteria <- "PC3"
   }
   if (criteria == "PC1") {
@@ -163,6 +171,14 @@ getnfac <- function(x, kmax = NULL, criteria = NULL) {
 #'@param k0 An integer represents the number of lags to sum together. 
 #'
 #' @return r An integer of the approximate number of factors.
+#'
+#' @examples
+#' \dontrun{
+#' data(dt.d)
+#' rt.log<-log(dt.d[2:dim(dt.d)[1],]/dt.d[1:(dim(dt.d)[1]-1),])
+#' r<-nof(rt.log,3)
+#' r$ic
+#' }
 #'
 #' @references Lam C , Yao Q . Factor modeling for high-dimensional time series: 
 #' Inference for the number of factors[J]. 

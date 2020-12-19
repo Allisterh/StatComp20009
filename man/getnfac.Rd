@@ -31,6 +31,16 @@ This function approximates the number of factors in an approximate factor model
 This function approximates the number of factors in an approximate
 factor model. Using the penalty functions PC(1),PC(2),PC(3).
 }
+\examples{
+\dontrun{
+data(dt.d)
+rt.log<-log(dt.d[2:dim(dt.d)[1],]/dt.d[1:(dim(dt.d)[1]-1),])
+r<-getnfac(rt.log,20,'PC1')
+r$ic
+}
+
+
+}
 \references{
 Jushan Bai and Serena Ng. 'Determining the Number of Factors in
 Approximate Factor Models.' Econometrica 70.1 (2002): 191-221. Print.

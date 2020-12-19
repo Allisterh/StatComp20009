@@ -3,22 +3,22 @@
     "path": "D:/2020fall/package/StatComp20009/R/factornumber.R",
     "project_path": "R/factornumber.R",
     "type": "r_source",
-    "hash": "0",
+    "hash": "2603191492",
     "contents": "",
     "dirty": false,
     "created": 1607959016688.0,
     "source_on_save": false,
     "relative_order": 6,
     "properties": {
-        "cursorPosition": "170,0",
-        "scrollLine": "0"
+        "cursorPosition": "179,7",
+        "scrollLine": "170"
     },
-    "folds": "",
-    "lastKnownWriteTime": 1607959152,
+    "folds": "38|54|159|0|\n",
+    "lastKnownWriteTime": 1608355293,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1607959152158,
+    "last_content_update": 1608355293246,
     "read_only": false,
     "read_only_alternatives": []
 }

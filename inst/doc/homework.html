@@ -12,7 +12,7 @@
 
 <meta name="author" content="Fanglin Bao" />
 
-<meta name="date" content="2020-12-18" />
+<meta name="date" content="2020-12-19" />
 
 <title>homework</title>
 
@@ -32,6 +32,15 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 </script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
 
 
 <style type="text/css">code{white-space: pre;}</style>
@@ -122,6 +131,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   }
 })();
 </script>
+
 
 
 
@@ -319,7 +329,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 <h1 class="title toc-ignore">homework</h1>
 <h4 class="author">Fanglin Bao</h4>
-<h4 class="date">2020-12-18</h4>
+<h4 class="date">2020-12-19</h4>
 
 
 
@@ -362,7 +372,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <span id="cb4-3"><a href="#cb4-3"></a>tli.table &lt;-<span class="st"> </span><span class="kw">xtable</span>(tli[<span class="dv">1</span><span class="op">:</span><span class="dv">15</span>, ])</span>
 <span id="cb4-4"><a href="#cb4-4"></a><span class="kw">print</span>(tli.table, <span class="dt">type =</span> <span class="st">&quot;html&quot;</span>)</span></code></pre></div>
 <!-- html table generated in R 4.0.2 by xtable 1.8-4 package -->
-<!-- Fri Dec 18 20:20:56 2020 -->
+<!-- Sat Dec 19 14:29:43 2020 -->
 <table border="1">
 <tr>
 <th>
@@ -690,7 +700,7 @@ WHITE
 <span id="cb5-3"><a href="#cb5-3"></a>fm1t &lt;-<span class="st"> </span><span class="kw">xtable</span>(fm1)</span>
 <span id="cb5-4"><a href="#cb5-4"></a><span class="kw">print</span>(fm1t, <span class="dt">type =</span> <span class="st">&quot;html&quot;</span>)</span></code></pre></div>
 <!-- html table generated in R 4.0.2 by xtable 1.8-4 package -->
-<!-- Fri Dec 18 20:20:56 2020 -->
+<!-- Sat Dec 19 14:29:43 2020 -->
 <table border="1">
 <tr>
 <th>
@@ -2297,8 +2307,8 @@ L_O(p,q)=(p^2+2pr)^{n_{A.}}(q^2+2qr)^{n_{B.}}(r^2)^{n_{OO}}(2pq)^{n_{AB}}
 <span id="cb122-5"><a href="#cb122-5"></a>ts &lt;-<span class="st"> </span><span class="kw">microbenchmark</span>(<span class="dt">rwR=</span><span class="kw">rw.R</span>(sigma, x0, N),<span class="dt">rwC=</span><span class="kw">rwRcpp</span>(sigma, x0, N))</span>
 <span id="cb122-6"><a href="#cb122-6"></a><span class="kw">summary</span>(ts)[,<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">6</span>)]</span></code></pre></div>
 <pre><code>##   expr       lq   median      uq
-## 1  rwR 14.43035 15.18045 20.2970
-## 2  rwC  1.15775  1.16320  1.1895</code></pre>
+## 1  rwR 18.62725 19.80465 24.5174
+## 2  rwC  1.45145  1.50180  1.6310</code></pre>
 <div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="#cb124-1"></a>rwR=<span class="kw">rw.R</span>(sigma, x0, N)</span>
 <span id="cb124-2"><a href="#cb124-2"></a>rwC=<span class="kw">rwRcpp</span>(sigma, x0, N)</span>
 <span id="cb124-3"><a href="#cb124-3"></a><span class="kw">qqplot</span>(rwR<span class="op">$</span>x,rwC<span class="op">$</span>x,<span class="dt">xlab =</span> <span class="st">&#39;rwR&#39;</span>,<span class="dt">ylab =</span> <span class="st">&#39;rwRcpp&#39;</span>,<span class="dt">pch =</span> <span class="dv">20</span>)</span>
@@ -2308,9 +2318,9 @@ L_O(p,q)=(p^2+2pr)^{n_{A.}}(q^2+2qr)^{n_{B.}}(r^2)^{n_{OO}}(2pq)^{n_{AB}}
 <span id="cb125-2"><a href="#cb125-2"></a>sigma &lt;-<span class="st"> </span><span class="fl">.5</span></span>
 <span id="cb125-3"><a href="#cb125-3"></a>ts &lt;-<span class="st"> </span><span class="kw">microbenchmark</span>(<span class="dt">rwR=</span><span class="kw">rw.R</span>(sigma, x0, N),<span class="dt">rwC=</span><span class="kw">rwRcpp</span>(sigma, x0, N))</span>
 <span id="cb125-4"><a href="#cb125-4"></a><span class="kw">summary</span>(ts)[,<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">6</span>)]</span></code></pre></div>
-<pre><code>##   expr       lq   median      uq
-## 1  rwR 14.46530 15.09525 19.6288
-## 2  rwC  1.31825  1.32470  1.3854</code></pre>
+<pre><code>##   expr      lq   median       uq
+## 1  rwR 17.8430 18.73315 24.32175
+## 2  rwC  1.6452  1.66285  1.74555</code></pre>
 <div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="#cb127-1"></a>rwR=<span class="kw">rw.R</span>(sigma, x0, N);rwC=<span class="kw">rwRcpp</span>(sigma, x0, N)</span>
 <span id="cb127-2"><a href="#cb127-2"></a><span class="kw">qqplot</span>(rwR<span class="op">$</span>x,rwC<span class="op">$</span>x,<span class="dt">xlab =</span> <span class="st">&#39;rwR&#39;</span>,<span class="dt">ylab =</span> <span class="st">&#39;rwRcpp&#39;</span>,<span class="dt">pch =</span> <span class="dv">20</span>)</span>
 <span id="cb127-3"><a href="#cb127-3"></a><span class="kw">abline</span>(<span class="dt">a=</span><span class="dv">0</span>,<span class="dt">b=</span><span class="dv">1</span>)</span></code></pre></div>
@@ -2320,8 +2330,8 @@ L_O(p,q)=(p^2+2pr)^{n_{A.}}(q^2+2qr)^{n_{B.}}(r^2)^{n_{OO}}(2pq)^{n_{AB}}
 <span id="cb128-3"><a href="#cb128-3"></a>ts &lt;-<span class="st"> </span><span class="kw">microbenchmark</span>(<span class="dt">rwR=</span><span class="kw">rw.R</span>(sigma, x0, N),<span class="dt">rwC=</span><span class="kw">rwRcpp</span>(sigma, x0, N))</span>
 <span id="cb128-4"><a href="#cb128-4"></a><span class="kw">summary</span>(ts)[,<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">6</span>)]</span></code></pre></div>
 <pre><code>##   expr       lq   median       uq
-## 1  rwR 14.53085 15.12290 19.61820
-## 2  rwC  1.31110  1.31735  1.34495</code></pre>
+## 1  rwR 17.87880 19.16395 24.54910
+## 2  rwC  1.63385  1.65105  1.73965</code></pre>
 <div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="#cb130-1"></a>rwR=<span class="kw">rw.R</span>(sigma, x0, N);rwC=<span class="kw">rwRcpp</span>(sigma, x0, N)</span>
 <span id="cb130-2"><a href="#cb130-2"></a><span class="kw">qqplot</span>(rwR<span class="op">$</span>x,rwC<span class="op">$</span>x,<span class="dt">xlab =</span> <span class="st">&#39;rwR&#39;</span>,<span class="dt">ylab =</span> <span class="st">&#39;rwRcpp&#39;</span>,<span class="dt">pch =</span> <span class="dv">20</span>)</span>
 <span id="cb130-3"><a href="#cb130-3"></a><span class="kw">abline</span>(<span class="dt">a=</span><span class="dv">0</span>,<span class="dt">b=</span><span class="dv">1</span>)</span></code></pre></div>
@@ -2330,9 +2340,9 @@ L_O(p,q)=(p^2+2pr)^{n_{A.}}(q^2+2qr)^{n_{B.}}(r^2)^{n_{OO}}(2pq)^{n_{AB}}
 <span id="cb131-2"><a href="#cb131-2"></a>sigma &lt;-<span class="st"> </span><span class="dv">16</span></span>
 <span id="cb131-3"><a href="#cb131-3"></a>ts &lt;-<span class="st"> </span><span class="kw">microbenchmark</span>(<span class="dt">rwR=</span><span class="kw">rw.R</span>(sigma, x0, N),<span class="dt">rwC=</span><span class="kw">rwRcpp</span>(sigma, x0, N))</span>
 <span id="cb131-4"><a href="#cb131-4"></a><span class="kw">summary</span>(ts)[,<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">6</span>)]</span></code></pre></div>
-<pre><code>##   expr       lq   median       uq
-## 1  rwR 14.65635 15.40185 19.70625
-## 2  rwC  1.23805  1.24380  1.27695</code></pre>
+<pre><code>##   expr      lq   median       uq
+## 1  rwR 17.9084 18.38470 24.10350
+## 2  rwC  1.5383  1.54865  1.62295</code></pre>
 <div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="#cb133-1"></a>rwR=<span class="kw">rw.R</span>(sigma, x0, N);rwC=<span class="kw">rwRcpp</span>(sigma, x0, N)</span>
 <span id="cb133-2"><a href="#cb133-2"></a><span class="kw">qqplot</span>(rwR<span class="op">$</span>x,rwC<span class="op">$</span>x,<span class="dt">xlab =</span> <span class="st">&#39;rwR&#39;</span>,<span class="dt">ylab =</span> <span class="st">&#39;rwRcpp&#39;</span>,<span class="dt">pch =</span> <span class="dv">20</span>)</span>
 <span id="cb133-3"><a href="#cb133-3"></a><span class="kw">abline</span>(<span class="dt">a=</span><span class="dv">0</span>,<span class="dt">b=</span><span class="dv">1</span>)</span></code></pre></div>

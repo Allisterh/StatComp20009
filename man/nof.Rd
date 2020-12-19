@@ -18,6 +18,15 @@ r An integer of the approximate number of factors.
 This function approximates the number of factors in a factor model
  for large N by T matrices using the methods  found in Lam and Yao(2012).
 }
+\examples{
+\dontrun{
+data(dt.d)
+rt.log<-log(dt.d[2:dim(dt.d)[1],]/dt.d[1:(dim(dt.d)[1]-1),])
+r<-nof(rt.log,3)
+r$ic
+}
+
+}
 \references{
 Lam C , Yao Q . Factor modeling for high-dimensional time series: 
 Inference for the number of factors[J]. 
